@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.header h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#workout {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#motivationalImage {
+  margin-top: 30px;
+  text-align: center;
+  max-width: 100%;
+}
+
+#motivation-img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .motivation-img {
+    max-width: 300px;
+  }
+}
