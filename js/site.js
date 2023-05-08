@@ -57,3 +57,40 @@ function getSEExercises() {
 }
 
 getWorkout();
+
+// Timer code
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+function startTimer() {
+  startTime = new Date();
+  timerInterval = setInterval(updateTimer, 10);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  elapsedTime += new Date() - startTime;
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  elapsedTime = 0;
+  document.getElementById("timer-display").textContent = "00:00.000";
+}
+
+function updateTimer() {
+  let time = new Date() - startTime + elapsedTime;
+  let minutes = Math.floor(time / 60000);
+  let seconds = Math.floor((time % 60000) / 1000);
+  let milliseconds = time % 1000;
+  let formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds
+    .toString()
+    .padStart(2, "0")}.${milliseconds.toString().padStart(3, "0")}`;
+  document.getElementById("timer-display").textContent = formattedTime;
+}
+
+document.getElementById("start-timer").addEventListener("click", startTimer);
+document.getElementById("stop-timer").addEventListener("click", stopTimer);
+document.getElementById("reset-timer").addEventListener("click", resetTimer);
